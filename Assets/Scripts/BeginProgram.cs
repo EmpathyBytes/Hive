@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
 
 public class BeginProgram : MonoBehaviour
 {
@@ -25,37 +26,38 @@ public class BeginProgram : MonoBehaviour
         DisableTrackingPoints();
     }
 
-    public void RemoveUI()
+    private void RemoveUI()
     {
-        GameObject.Destroy(Ui);
+        var scaler = Ui.GetComponent<CanvasScaler>();
+        var grc = Ui.GetComponent<GraphicRaycaster>();
+        if (scaler is not null) Destroy(scaler);
+        if (grc is not null) Destroy(grc);
+        Destroy(Ui);
     }
 
-    public void EnableGObject()
+    private void EnableGObject()
     {
         GObject.SetActive(true);
-        Vector3 CameraPos = ARCam.transform.position;
-        CameraPos.y -= 1.8f;
-        GObject.transform.position = CameraPos;
+        var cameraPos = ARCam.transform.position;
+        cameraPos.y -= 1.8f;
+        GObject.transform.position = cameraPos;
     }
 
-    public void DisablePassthrough()
+    private void DisablePassthrough()
     {
-        ARCameraBackground arcbg = ARCam.GetComponent<ARCameraBackground>();
-        if (arcbg == null) return;
-        arcbg.useCustomMaterial = true;
-        arcbg.customMaterial = CustomMaterial;
+        var camBg = ARCam.GetComponent<ARCameraBackground>();
+        if (camBg is not null) Destroy(camBg);
     }
 
-    public void DisableTrackingPoints()
+    private void DisableTrackingPoints()
     {
-        GameObject.Destroy(TrackingPointPrefab);
+        Destroy(TrackingPointPrefab);
         var pcm = ARSOrigin.GetComponent<ARPointCloudManager>();
-        if (pcm == null) return;
+        if (pcm is null) return;
         pcm.enabled = false;
         foreach (var point in pcm.trackables)
         {
             point.gameObject.SetActive(false);
         }
-        //GameObject.Destroy(pcm);
     }
 }
