@@ -4,7 +4,25 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Manager.unity
+    guid: d43fe9fbd6ea95842aed03d0fefa1041
+  - enabled: 1
+    path: Assets/Scenes/ARFoundation.unity
+    guid: 38697e068eb774146a10828ccf2f9702
+  - enabled: 1
+    path: Assets/Scenes/TrackingQuality.unity
+    guid: 6ecdbc11b5940b645a3e6e5d444bd0e1
+  - enabled: 1
+    path: Assets/Scenes/StartUI.unity
+    guid: 75128e97eb0a1c84489f0f8e769e017e
+  - enabled: 1
+    path: Assets/Scenes/HiveL2.unity
+    guid: 5ba8b00a0c5e49b4fb2a90073f7cc4a6
+  - enabled: 1
+    path: Assets/Scenes/TouchUI.unity
+    guid: 25b648e14f09e834b9d4289a6135cb79
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 105ef1dc37786574f8274137d6608792, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4c6fff9bf5d479d47a557408b521d5dd, type: 2}

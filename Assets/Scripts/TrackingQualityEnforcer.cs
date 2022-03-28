@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,12 @@ public class TrackingQualityEnforcer : MonoBehaviour
     public ARSession Ars;
     public Canvas Notifier;
     public Text Msg;
+
+    private void Start()
+    {
+        var go = GameObject.Find("AR Session");
+        Ars = go.GetComponent<ARSession>();
+    }
 
     // Update is called once per frame
     void Update()
