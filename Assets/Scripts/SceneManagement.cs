@@ -20,7 +20,7 @@ public class SceneManagement : MonoBehaviour
         SceneManager.UnloadSceneAsync("TrackingQuality").Yield();
         SceneManager.LoadScene("HiveL2", LoadSceneMode.Additive);
         SceneManager.LoadScene("TouchUI", LoadSceneMode.Additive);
-        SceneManager.LoadScene("TrackingQuality", LoadSceneMode.Additive);
+        SceneManager.LoadScene("TrackingQuality", LoadSceneMode.Additive); // Reloading TrackingQuality to ensure it's on the top
     }
     
 }
