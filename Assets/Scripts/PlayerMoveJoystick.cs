@@ -19,20 +19,22 @@ public class PlayerMoveJoystick : MonoBehaviour
     private void Start()
     {
         cam = Camera.main;
-        go = GameObject.Find("Hive");
+        go = GameObject.Find("World Origin");
     }
 
     void Update()
     {
         // InputDirection can be used as per the need of your project
         direction = jsMovement.InputDirection;
-
+        var t = cam.transform;
+        
         // If we drag the Joystick
         if (direction.magnitude != 0)
         {
-            // TODO make it so that it doesn't account for vertical movement because haha *phases through the floor*
-            go.transform.position -= cam.transform.forward * direction.y * moveSpeed +
-                                      cam.transform.right * direction.x * moveSpeed;
+            var nvec = t.forward * direction.y * moveSpeed +
+                       t.right * direction.x * moveSpeed;
+            nvec.y = 0;
+            go.transform.position -= nvec;
         }
     }
 }

@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MoveJoystick.unity
     guid: fd42086bbaef86642aa7d8d5d4ab17bc
+  - enabled: 1
+    path: Assets/Scenes/URP.unity
+    guid: cbca18f8f6ffb4a47b378088fecd40bb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bb15e8207925217488e01b0b411f69ff, type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 105ef1dc37786574f8274137d6608792, type: 2}

@@ -9,6 +9,7 @@ public class SceneManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SceneManager.LoadScene("URP", LoadSceneMode.Additive);
         SceneManager.LoadScene("ARFoundation", LoadSceneMode.Additive);
         SceneManager.LoadScene("StartUI", LoadSceneMode.Additive);
         SceneManager.LoadScene("TrackingQuality", LoadSceneMode.Additive);
